@@ -81,7 +81,7 @@ extension SearchResultsVC: UICollectionViewDelegate, UICollectionViewDataSource 
         Task {
             do {
                 let result: YoutubeSearchResponse =  try await APICaller.shared.fetchAPI(url: url)
-                let videoElement = result.items[1]
+                let videoElement = result.items[0]
                 self.delegate?.searchResultsViewControllerDidTapItem(TitlePreviewViewModel(title: title.original_title ?? "", youtubeView: videoElement, titleOverview: title.overview ?? ""))
 //                let vc = PreviewVC()
 //                vc.configure(with: (TitlePreviewViewModel(title: title.original_title ?? "", youtubeView: videoElement, titleOverview: title.overview ?? "")))
